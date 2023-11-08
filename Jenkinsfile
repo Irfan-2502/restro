@@ -11,7 +11,7 @@ node {
 	}
 	
 	stage('deploy') {
-		deploy adapters: [tomcat9(credentialsId: '7fb11f96-ed2d-43a1-9c17-45020497c9fe', path: '', url: 'http://65.0.72.129:8080/')], contextPath: null, onFailure: false, war: '**/*.war'
+		deploy adapters: [tomcat9(credentialsId: '9de4d29d-dd79-4aa7-85bb-629247c18db8', path: '', url: 'http://52.66.242.19:8080/')], contextPath: null, war: '**/*.war'
 	}
 
 }
