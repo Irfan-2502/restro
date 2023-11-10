@@ -6,12 +6,11 @@ node {
 	stage('build') {
 		def mvnHome = tool 'MAVEN'
 		withEnv(["MVN_HOME=$mvnHome"]){
-			sh '"$MVN_HOME/bin/mvn" clean compile package'
+		sh '"$MVN_HOME/bin/mvn" clean compile package'
 		}
 	}
 	
 	stage('deploy') {
-		deploy adapters: [tomcat9(credentialsId: '948ec2c3-db4f-4966-a3aa-b81d2ac89d82', path: '', url: 'http://52.40.25.7:8080/')], contextPath: null, war: '**/*.war'
-
+		deploy adapters: [tomcat9(credentialsId: 'a1e6e8cc-22d8-4876-930e-054e66ce98a0', path: '', url: 'http://52.40.25.7:8080/')], contextPath: null, war: '**/*.war'
+    }
 }
-
